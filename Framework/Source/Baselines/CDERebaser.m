@@ -148,7 +148,7 @@
         
         [self estimateEventStoreCompactionFollowingRebaseWithCompletion:^(float compaction) {
             BOOL compactionIsAdequate = compaction > 0.5f;
-            BOOL result = !hasBaseline || !hasAllDevicesInBaseline || hasManyEvents || (hasAdequateChanges && compactionIsAdequate);
+            BOOL result = !hasBaseline || !hasAllDevicesInBaseline // || hasManyEvents || (hasAdequateChanges && compactionIsAdequate);
             if (completion) completion(result);
         }];
     }];
